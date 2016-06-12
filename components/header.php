@@ -33,14 +33,14 @@
 
   <a href="tel:9549812626" class="button--header phone">
     <span class="is-hidden-and-accessible">Telephone</span>
-    <svg class="icon icon--small icon--slate">
+    <svg class="icon icon--small icon--white">
       <use xlink:href="#icon--phone" />
     </svg>
   </a>
 
   <button class="button--header menu">
     <span class="is-hidden-and-accessible">Menu</span>
-    <svg class="icon icon--small icon--slate">
+    <svg class="icon icon--small icon--white">
       <use xlink:href="#icon--menu" />
     </svg>
   </button>
