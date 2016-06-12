@@ -1,0 +1,37 @@
+$button-padding: 10px;
+
+.button {
+  @include default(border-radius);
+  padding: $button-padding;
+  display: block;
+  width: 100%;
+  background-color: color(blue);
+  border: 1px solid color(blue);
+  cursor: pointer;
+  color: color(white);
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition:
+    background-color 0.1s ease-in-out,
+    border-color 0.1s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: color(blue, light);
+    background-color: color(blue, light);
+  }
+}
+
+.button--inline {
+  display: inline;
+  width: auto;
+}
+
+.button--unstyled {
+  background: none;
+  border: none;
+}

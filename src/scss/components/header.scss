@@ -1,0 +1,21 @@
+$header-button-size: rem(50px);
+
+.button--header {
+  display: flex;
+  border: none;
+  outline: none;
+  align-items: center;
+  justify-content: center;
+  background-color: color(slate);
+  width: $header-button-size;
+  height: $header-button-size;
+}
+
+.phone {
+  border-bottom-right-radius: default(border-radius);
+}
+
+.menu {
+  border-bottom-right-radius: default(border-radius);
+}
+
