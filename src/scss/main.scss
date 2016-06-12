@@ -1,0 +1,24 @@
+// Globals
+@import 'base/layout';
+@import 'base/variables';
+@import 'base/breakpoints';
+
+// Foundation
+@import 'foundation/colors';
+@import 'foundation/defaults';
+@import 'foundation/typography';
+
+// Components
+@import 'components/media-helpers';
+@import 'components/header';
+@import 'components/menu';
+@import 'components/slider';
+@import 'components/forms';
+@import 'components/lists';
+@import 'components/footer';
+
+// Non refactored code
+@import 'old/general-layout.scss';
+@import 'old/bjqs.scss';
+@import 'old/slides.scss';
+@import 'old/testimonials.scss';

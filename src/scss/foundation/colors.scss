@@ -1,0 +1,43 @@
+$colors-map: (
+  white: (
+    base: #fff,
+  ),
+
+  black: (
+    base: #000,
+  ),
+
+  red: (
+    base: #ef5030,
+  ),
+
+  blue: (
+    base: #006db7,
+  ),
+
+  green: (
+    dark: #8aa941,
+    base: #89c541,
+    light: #a4d43c,
+  ),
+
+  gray: (
+    light: #f9f9f9,
+    base: #f6f6f6,
+    dark: #d8d8d8,
+  ),
+
+  slate: (
+    light: #999999,
+    base: #4c4c4c,
+  ),
+);
+
+@function color($hue, $value: base) {
+  $fetched-color: map-get(map-get($colors-map, $hue), $value);
+  @return $fetched-color;
+}
+
+@mixin color($hue, $value: base) {
+  color: color($hue);
+}
