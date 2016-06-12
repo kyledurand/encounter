@@ -1,0 +1,16 @@
+// Sweet sweet css transitions made easy.
+// @include transition(font-size property(ease-in-out), opacity property(in-fast));
+
+$TRANSITIONS: (
+  in-fast: 0.2s ease-in,
+  out-fast: 0.2s ease-out,
+  ease-in-out: 0.25s ease-in-out,
+);
+
+@function property($element) {
+  @return map-get($TRANSITIONS, $element);
+}
+
+@mixin transition($property...) {
+  transition: $property;
+}

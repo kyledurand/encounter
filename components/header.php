@@ -31,14 +31,14 @@
 <body itemscope itemtype="https://schema.org/LocalBusiness">
   <?php include "components/icons.php" ?>
 
-  <a href="tel:9549812626">
+  <a href="tel:9549812626" class="button--header phone">
     <span class="is-hidden-and-accessible">Telephone</span>
     <svg class="icon icon--small icon--slate">
       <use xlink:href="#icon--phone" />
     </svg>
   </a>
 
-  <button>
+  <button class="button--header menu">
     <span class="is-hidden-and-accessible">Menu</span>
     <svg class="icon icon--small icon--slate">
       <use xlink:href="#icon--menu" />
