@@ -1,0 +1,20 @@
+$small-icon-size: 16px;
+
+.icon--small {
+  width: $small-icon-size;
+  height: $small-icon-size;
+}
+
+.icon--white {
+  * {
+    fill: color(white);
+    stroke: color(white);
+  }
+}
+
+.icon--slate {
+  * {
+    fill: color(slate);
+    stroke: color(slate);
+  }
+}

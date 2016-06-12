@@ -1,19 +1,24 @@
-$font-size-map: (
+$font-map: (
   small: 1.4rem,
   medium: 1.6rem,
   large: 2rem,
+  thin: 300,
+  bold: 700,
 );
 
 @function font-size($size) {
-  @return map-get($font-size-map, $size);
+  @return map-get($font-map, $size);
 }
 
 @mixin font-size($size) {
   font-size: font-size($size);
 }
 
-@import url(http://fonts.googleapis.com/css?family=Dosis);
-@import url(http://fonts.googleapis.com/css?family=Anton);
+@mixin font-weight($weight) {
+  font-size: font-size($weight);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
 
 html {
   font-size: 62.5%;
@@ -45,6 +50,10 @@ body {
   @include font-size(large);
 }
 
+.type--thin {
+  @include font-weight(thin);
+}
+
 // Source: https://github.com/kennethormandy/normalize-opentype.css/blob/master/normalize-opentype.scss
 // Turns on kerning, standard ligatures, and proportional numerals.
 
@@ -57,16 +66,17 @@ body {
 
 h1 {
   @include color(slate, base);
-  font-size: 34px;
-  font-family: 'Dosis';
+  @include font-size(large);
+  @include font-weight(thin);
+  font-family: 'Roboto';
   margin: 0;
   font-weight: lighter;
   line-height: 30pt;
 }
 
 h2 {
-  font-size: 26px;
-  font-family: 'Dosis';
+  @include font-size(medium)
+  font-family: 'Roboto';
   margin: 8px 0;
   font-weight: 600;
   color: #006db7;
@@ -74,87 +84,11 @@ h2 {
 
 h3 {
   @include color(slate, base);
-  font-size: 24px;
-  font-family: 'Dosis';
+  @include font-size(medium);
+  font-family: 'Roboto';
   margin: 0;
   font-weight: lighter;
   line-height: 20pt;
-}
-
-h4 {
-  font-size: 18px;
-  font-family: 'Dosis';
-  margin: 8px 0;
-  font-weight: lighter;
-  color: #333;
-}
-
-h5 {
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 8px 0;
-  color: #333;
-}
-
-h6 {
-  font-size: 20px;
-  font-family: 'Anton';
-  margin: 8px 0;
-  line-height: 20pt;
-  color: black;
-  letter-spacing: 2px;
-  font-weight:lighter;
-}
-
-h2.services {
-  @include color(slate, base);
-  font-size: 27px;
-  font-family: 'Dosis';
-  margin: 0px;
-  font-weight: lighter;
-  line-height: 20pt;
-  margin-top: 20px
-}
-
-.quote {
-  position: relative;
-  margin-left: 24px;
-}
-
-.quote:before {
-  display: inline-block;
-  content: '“';
-  position: absolute;
-  top: -25px;
-  left: -27px;
-  font-size: 80px;
-  opacity: 0.75;
-}
-
-.quote:after {
-  position: relative;
-  display: inline-block;
-  content: '”';
-  top: 37px;
-  font-size: 80px;
-  line-height: 0px;
-  opacity: 0.75;
-}
-
-h1.services {
-  @include color(slate, base);
-  font-size: 27px;
-  font-family: 'Dosis';
-  margin: 0px;
-  font-weight: lighter;
-  line-height: 20pt;
-  margin-top: 20px
-}
-
-.hero-title {
-  font-family: 'Anton';
-  font-size: 40px;
-  line-height: 42px;
 }
 
 p {
