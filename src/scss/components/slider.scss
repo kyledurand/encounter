@@ -1,6 +1,7 @@
 $height: 270px;
 $height-large: 400px;
 
+#slides,
 .slides_container {
   position: relative;
   width: 100%;
@@ -17,7 +18,6 @@ $height-large: 400px;
 }
 
 .slide {
-  cursor: pointer;
   background-size: cover;
   background-position: center center;
   width: 100%;

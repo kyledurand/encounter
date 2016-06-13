@@ -35,8 +35,9 @@ body {
 
 .type--heading {
   @include font-size(large);
+  @include font-weight(thin);
   margin: 0;
-  font-weight: 600;
+  padding: spacing();
 }
 
 .type--small {
@@ -61,6 +62,14 @@ body {
 
 .type--uppercase {
   text-transform: uppercase;
+}
+
+.type--underlined {
+  text-decoration: underline;
+}
+
+.type--centered {
+  text-align: center;
 }
 
 .type--white {
@@ -111,4 +120,8 @@ li {
   @include color(slate);
   font-family: 'Roboto';
   margin: 0;
+}
+
+.text-block {
+  padding: 0 spacing(loose) spacing();
 }

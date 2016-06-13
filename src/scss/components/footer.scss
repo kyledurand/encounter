@@ -1,0 +1,10 @@
+footer {
+  display: flex;
+  justify-contents: space-between;
+  background-color: color(slate);
+  padding: spacing(loose);
+
+  * {
+    @include color(white);
+  }
+}
