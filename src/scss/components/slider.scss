@@ -1,1 +1,68 @@
+$height: 270px;
+$height-large: 400px;
 
+.slides_container {
+  position: relative;
+  width: 100%;
+  height: $height;
+  overflow: hidden;
+
+  @include after(medium-screens) {
+    height: $height-large;
+  }
+}
+
+.slides_control {
+  width: 100% !important;
+}
+
+.slide {
+  cursor: pointer;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: $height;
+  max-width: 960px;
+  display: block;
+
+  @include after(medium-screens) {
+    height: $height-large;
+  }
+}
+
+.slide1 {
+  background-image: url(../images/lawn.jpg);
+}
+
+.slide2 {
+  background-image: url(../images/tv.jpg);
+}
+
+.slide__text {
+  background-color: rgba(color(white), 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  max-width: 240px;
+  height: 100%;
+  padding: spacing();
+
+
+  @include after (medium-screens) {
+    height: auto;
+    margin: spacing();
+  }
+}
+
+.slide__cta-container {
+  text-align: center;
+}
+
+.slide__cta {
+  margin-top: spacing(loose);
+}
+
+.pagination {
+  display: none;
+}

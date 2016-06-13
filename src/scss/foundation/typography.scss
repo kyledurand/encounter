@@ -1,9 +1,9 @@
 $font-map: (
   small: 1.4rem,
   medium: 1.6rem,
-  large: 2rem,
+  large: 2.5rem,
   thin: 300,
-  bold: 700,
+  thick: 700,
 );
 
 @function font-size($size) {
@@ -15,7 +15,7 @@ $font-map: (
 }
 
 @mixin font-weight($weight) {
-  font-size: font-size($weight);
+  font-weight: font-size($weight);
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
@@ -35,6 +35,7 @@ body {
 
 .type--heading {
   @include font-size(large);
+  margin: 0;
   font-weight: 600;
 }
 
@@ -54,15 +55,28 @@ body {
   @include font-weight(thin);
 }
 
+.type--thick {
+  @include font-weight(thick);
+}
+
+.type--uppercase {
+  text-transform: uppercase;
+}
+
+.type--white {
+  @include color(white);
+}
+
+.type--slate {
+  @include color(slate);
+}
+
 // Source: https://github.com/kennethormandy/normalize-opentype.css/blob/master/normalize-opentype.scss
 // Turns on kerning, standard ligatures, and proportional numerals.
 
 * {
   font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 0, "dlig" 0;
 }
-
-// Needs refactoring
-
 
 h1 {
   @include color(slate, base);
@@ -85,18 +99,16 @@ h2 {
 h3 {
   @include color(slate, base);
   @include font-size(medium);
+  @include font-weight(thin);
   font-family: 'Roboto';
   margin: 0;
-  font-weight: lighter;
   line-height: 20pt;
 }
 
-p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  color: #333;
-}
-
-.small p {
-  font-size: 9px;
+p,
+li {
+  @include font-size(small);
+  @include color(slate);
+  font-family: 'Roboto';
+  margin: 0;
 }

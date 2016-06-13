@@ -1,8 +1,14 @@
-$small-icon-size: 22px;
+$small-icon-size: 18px;
+$medium-icon-size: 22px;
 
 .icon--small {
   width: $small-icon-size;
   height: $small-icon-size;
+}
+
+.icon--medium {
+  width: $medium-icon-size;
+  height: $medium-icon-size;
 }
 
 .icon--white {

@@ -30,23 +30,59 @@
 
 <body itemscope itemtype="https://schema.org/LocalBusiness">
   <?php include "components/icons.php" ?>
+  <div class="page">
+    <header>
+      <div class="repeatable-grass">
+        <a href="tel:9549812626" class="button--header phone">
+          <span class="is-hidden-and-accessible">Telephone</span>
+          <svg class="icon icon--medium icon--white">
+            <use xlink:href="#icon--phone" />
+          </svg>
+        </a>
 
-  <a href="tel:9549812626" class="button--header phone">
-    <span class="is-hidden-and-accessible">Telephone</span>
-    <svg class="icon icon--small icon--white">
-      <use xlink:href="#icon--phone" />
-    </svg>
-  </a>
+        <h1 class="logo">
+          <span class="is-hidden-and-accessible">Bitter blue lawn and garden</span>
+          <img src="images/logo.png" alt="Bitter Blue Lawn and garden">
+        </h1>
 
-  <button class="button--header menu">
-    <span class="is-hidden-and-accessible">Menu</span>
-    <svg class="icon icon--small icon--white">
-      <use xlink:href="#icon--menu" />
-    </svg>
-  </button>
+        <button class="button--header menu" data="menu-trigger">
+          <span class="is-hidden-and-accessible">Open menu</span>
+          <svg class="icon icon--small icon--white">
+            <use xlink:href="#icon--menu" />
+          </svg>
+        </button>
 
-  <nav class="menu--condensed">
-    <ul>
-      <li></li>
-    </ul>
-  </nav>
+        <nav>
+          <div class="menu--condensed">
+            <h2 class="menu__title type--heading type--large type--bold type--uppercase type--slate">Menu</h2>
+            <button class="button--header close" data="menu-dismiss">
+              <span class="is-hidden-and-accessible">Close menu</span>
+              <svg class="icon icon--small icon--white">
+                <use xlink:href="#icon--dismiss" />
+              </svg>
+            </button>
+
+            <ul class="list list--right-aligned">
+              <?php include 'components/menu.php' ?>
+              <li>
+                <p>
+                  1621 NW 77 th Way <br>
+                  Pembroke Pines<br>
+                  Florida 33024<br>
+                  954 - 981 - 2626<br>
+                  bitterbluelawn@gmail.com<br>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="menu--expanded">
+          <ul class="list line--inline list--flex">
+            <?php $menuVersion = 'expanded' ?>
+            <?php include 'components/menu.php' ?>
+          </ul>
+        </div>
+      </nav>
+    </header>
+

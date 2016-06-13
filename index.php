@@ -7,3 +7,11 @@
 ?>
 
 <?php include 'components/header.php'; ?>
+
+<?php include 'components/slider.php'; ?>
+
+<?php
+  $loadHomePageScripts = true;
+  include 'components/footer.php';
+?>
+

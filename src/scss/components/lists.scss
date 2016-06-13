@@ -1,0 +1,28 @@
+.list {
+  margin: 0;
+  padding: spacing();
+  list-style: none;
+
+  * {
+    padding: spacing(tight) 0;
+    text-decoration: none;
+  }
+}
+
+.list--right-aligned {
+  * {
+    text-align: right;
+  }
+}
+
+.list--inline {
+  * {
+    display: inline-block;
+  }
+}
+
+.list--flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

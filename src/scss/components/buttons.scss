@@ -1,12 +1,13 @@
 $button-padding: 10px;
+$header-button-size: rem(60px);
 
 .button {
   @include default(border-radius);
   padding: $button-padding;
   display: block;
   width: 100%;
-  background-color: color(blue);
-  border: 1px solid color(blue);
+  background-color: color(green);
+  border: 1px solid color(green);
   cursor: pointer;
   color: color(white);
   line-height: 1;
@@ -21,17 +22,37 @@ $button-padding: 10px;
   &:hover,
   &:focus,
   &:active {
-    border-color: color(blue, light);
-    background-color: color(blue, light);
+    border-color: color(green, light);
+    background-color: color(green, light);
   }
 }
 
 .button--inline {
-  display: inline;
+  display: inline-block;
   width: auto;
 }
 
 .button--unstyled {
   background: none;
   border: none;
+}
+
+.button--header {
+  @include transition(opacity property(out-fast));
+  position: absolute;
+  top: 0px;
+  display: flex;
+  border: none;
+  outline: none;
+  align-items: center;
+  justify-content: center;
+  background-color: color(slate);
+  width: $header-button-size;
+  height: $header-button-size;
+  opacity: 1;
+
+  @include after(medium-screens) {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
