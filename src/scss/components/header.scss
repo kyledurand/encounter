@@ -14,9 +14,34 @@ $repeatable-grass-height: 60px;
 }
 
 .logo {
-  margin-top: spacing(loose);
+  padding-top: spacing();
   max-width: $logo-max-width;
   margin: 0 auto;
+
+  @include after(small-screens) {
+    padding-top: spacing(loose);
+  }
+}
+
+.header-text {
+  @include font-size(small);
+  @include transition(transform property(in-fast));
+  transform: translateY(-2em);
+  position: absolute;
+  top: 0;
+  padding: spacing();
+
+  @include after(medium-screens) {
+    transform: translateY(0);
+  }
+}
+
+.header-text--phone {
+  left: 0;
+}
+
+.header-text--address {
+  right: 0;
 }
 
 .menu--condensed {

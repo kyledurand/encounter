@@ -38,7 +38,7 @@ $header-button-size: rem(60px);
 }
 
 .button--header {
-  @include transition(opacity property(out-fast));
+  @include transition(transform property(out-fast));
   position: absolute;
   top: 0px;
   display: flex;
@@ -49,10 +49,10 @@ $header-button-size: rem(60px);
   background-color: color(slate);
   width: $header-button-size;
   height: $header-button-size;
-  opacity: 1;
+  transform: translateY(0);
 
   @include after(medium-screens) {
-    opacity: 0;
+    transform: translateY(-44px);
     pointer-events: none;
   }
 }

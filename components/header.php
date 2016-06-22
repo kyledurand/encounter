@@ -40,10 +40,14 @@
           </svg>
         </a>
 
+        <span class="header-text header-text--phone">954 - 981 - 2626</span>
+
         <h1 class="logo">
           <span class="is-hidden-and-accessible">Bitter blue lawn and garden</span>
           <img src="images/logo.png" alt="Bitter Blue Lawn and garden">
         </h1>
+
+        <span class="header-text header-text--address">1621 NW 77th Way Pembroke Pines</span>
 
         <button class="button--header menu" data="menu-trigger">
           <span class="is-hidden-and-accessible">Open menu</span>

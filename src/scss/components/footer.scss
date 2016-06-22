@@ -1,10 +1,25 @@
+$footer-section-min-width: rem(breakpoint-value-for(small-screens));
+
 footer {
-  display: flex;
-  justify-contents: space-between;
   background-color: color(slate);
   padding: spacing(loose);
 
   * {
     @include color(white);
+  }
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-contents: space-between;
+}
+
+.footer-section {
+  flex: 1 1 $footer-section-min-width / 2 + (spacing() * 4);
+  margin: spacing(tight) 0;
+
+  @include before(small-screens) {
+    text-align: center;
   }
 }
