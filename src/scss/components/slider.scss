@@ -22,10 +22,11 @@ $height-large: 350px;
   background-position: center center;
   width: 100%;
   height: $height;
-  max-width: 960px;
-  display: block;
+  max-width: $siteMaxWidth;
 
   @include after(medium-screens) {
+    display: flex;
+    align-items: center;
     height: $height-large;
   }
 }
@@ -36,21 +37,32 @@ $height-large: 350px;
 
 .slide2 {
   background-image: url(../images/tv.jpg);
+
+  @include after(medium-screens) {
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
 }
 
 .slide__text {
-  background-color: rgba(color(white), 0.75);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40%;
-  max-width: 240px;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: spacing();
+  background-color: rgba(color(white), 0.75);
 
+  @include before(medium-screens) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+  }
 
-  @include after (medium-screens) {
+  @include after(medium-screens) {
     height: auto;
+    max-width: 240px;
     margin: spacing();
   }
 }

@@ -17,7 +17,7 @@ footer {
 
 .footer-section {
   flex: 1 1 $footer-section-min-width / 2 + (spacing() * 4);
-  margin: spacing(tight) 0;
+  margin: spacing() 0;
 
   @include before(small-screens) {
     text-align: center;

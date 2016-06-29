@@ -21,7 +21,7 @@ body {
 .page {
   @include default(box-shadow);
   position: relative;
-  max-width: 960px;
+  max-width: $siteMaxWidth;
   margin: 0 auto;
 }
 

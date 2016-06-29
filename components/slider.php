@@ -2,7 +2,7 @@
   <div class="slides_container">
     <div class="slide slide1">
       <div class="slide__text">
-        <p class="type--large type--thin">
+        <p class="type--large type--thin type--centered">
           Some text that will lead into a CTA
         </p>
 
@@ -14,7 +14,7 @@
 
     <div class="slide slide2">
       <div class="slide__text">
-        <p class="type--large type--thin">
+        <p class="type--large type--thin type--centered">
           Some text that will lead into a CTA
         </p>
 
