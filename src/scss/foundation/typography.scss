@@ -18,7 +18,7 @@ $font-map: (
   font-weight: font-size($weight);
 }
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,700);
 
 html {
   font-size: 62.5%;
@@ -97,35 +97,29 @@ h1 {
   @include font-size(large);
   @include font-weight(thin);
   margin: 0;
-  font-weight: lighter;
-  line-height: 30pt;
 }
 
 h2 {
   @include font-size(medium)
-  font-family: 'Roboto';
-  margin: 8px 0;
-  font-weight: 600;
-  color: #006db7;
+  @include font-weight(thin);
 }
 
 h3 {
   @include color(slate, base);
   @include font-size(medium);
   @include font-weight(thin);
-  font-family: 'Roboto';
   margin: 0;
-  line-height: 20pt;
 }
 
 p,
 li {
   @include font-size(small);
   @include color(slate);
-  font-family: 'Roboto';
   margin: 0;
 }
 
 .text-block {
+  margin: 0 auto;
+  max-width: $siteMaxWidth - 300;
   padding: 0 spacing(loose) spacing();
 }
