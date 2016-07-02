@@ -34,3 +34,9 @@ header,
 section {
   display: block;
 }
+
+// Delete after launch
+
+.slide__cta-container,
+.button--header.menu,
+.menu--expanded { display: none !important; }

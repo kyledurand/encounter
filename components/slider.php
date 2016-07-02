@@ -3,7 +3,7 @@
     <div class="slide slide1">
       <div class="slide__text">
         <p class="type--large type--thin type--centered">
-          Some text that will lead into a CTA
+          Servicing Broward County for over thirty years
         </p>
 
         <div class="slide__cta-container">
@@ -15,7 +15,7 @@
     <div class="slide slide2">
       <div class="slide__text">
         <p class="type--large type--thin type--centered">
-          Some text that will lead into a CTA
+          Enter to win a 65” RCA  Ultra 4K TV. Details in store.
         </p>
 
         <div class="slide__cta-container">

@@ -22,11 +22,15 @@
 </h2>
 
 <p class="text-block">
-  This would be a large text block. This would be a large text block. This
-  would be a large text block. This would be a large text block. This would be a
-  large text block. This would be a large text block. This would be a large text
-  block. This would be a large text block. This would be a large text block. This
-  would be a large text block.
+  Bitter Blue Lawn &amp; Garden has been servicing Broward County for over 30 years in
+  the repairs of lawn equipment.  We are very proud to be a retailer of the STIHL
+  product line. As an independent Dealer, we can provide many services that the
+  big box chain stores just can't match. Our friendly and knowledgeable staff is
+  always ready to help you select the equipment that meets your specific needs. We
+  can offer fast, professional service for your STIHL equipment after the sale.
+  Your equipment comes fully assembled and ready to use, and our staff can give
+  you in-store safety and operating demonstrations so that you can get started on
+  your tasks as soon as you get home.
 </p>
 
 <h2 class="type--heading type--thin type--slate type--underlined type--centered">

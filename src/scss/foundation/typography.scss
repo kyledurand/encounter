@@ -38,7 +38,7 @@ body {
   @include font-size(large);
   @include font-weight(thin);
   margin: 0;
-  padding: spacing();
+  padding: spacing(loose) spacing() spacing();
 }
 
 .type--small {
