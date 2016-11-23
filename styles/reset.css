@@ -122,6 +122,7 @@ sub {
 
 img {
   border: 0;
+  max-width: 100%;
 }
 
 /**
@@ -166,6 +167,8 @@ textarea {
   color: inherit; /* 1 */
   font: inherit; /* 2 */
   margin: 0; /* 3 */
+  background: none;
+  border: none;
 }
 
 button {

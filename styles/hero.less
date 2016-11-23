@@ -1,0 +1,77 @@
+@hero-min-height: 736px;
+@border-width: 2px;
+@phone-width: 414px;
+@phone-offset: rotate(30deg) translate(-195px, -100px);
+
+.hero {
+  max-width: @site-max-width;
+  margin: 0 auto;
+  padding-left: @spacing-edge;
+  padding-top: @spacing;
+  position: relative;
+  overflow: hidden;
+  min-height: @hero-min-height;
+}
+
+.hero__cta {
+  max-width: 456px;
+  margin-left: @spacing-loose * 2;
+
+  @media @before-medium-screens {
+    max-width: 50%;
+    margin-left: 0;
+  }
+}
+
+.hero__phone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: @phone-offset;
+  max-width: 45%;
+  will-change: transform;
+  transition: 0.15s transform ease-in;
+
+  @media @after-medium-screens {
+    max-width: @phone-width;
+  }
+
+  @media @before-large-screens {
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
+
+// Stylistic rectangles in the corners of the hero section.
+.hero-block {
+  position: absolute;
+  border: @border-width solid @gray-light;
+  z-index: -1;
+}
+
+.hero__block-left-1 {
+  left: -@border-width;
+  bottom: -@border-width;
+  width: 76px;
+  height: 460px;
+}
+
+.hero__block-left-2 {
+  left: -@border-width;
+  bottom: -@border-width;
+  width: 370px;
+  height: 100px;
+}
+
+.hero__block-right-1 {
+  top: -@border-width;
+  right: -@border-width;
+  width: 690px;
+  height: 90px;
+}
+
+.hero__block-right-2 {
+  top: -@border-width;
+  right: -@border-width;
+  width: 580px;
+  height: 450px;
+}
