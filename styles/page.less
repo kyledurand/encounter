@@ -1,16 +1,34 @@
-@site-max-width: 1200px;
+@site-max-width: 1000px;
 
 .logo {
   display: block;
-  max-width: 243px;
+  max-width: 242px;
+  max-height: 71px;
+}
+
+.wrapper {
+  position: relative;
+  padding: @spacing-loose;
+
+  @media @after-small-screens {
+    max-width: @site-max-width;
+    margin: 0 auto;
+    padding: @spacing-loose @spacing-loose * 2;
+  }
+
+  @media @after-medium-screens {
+    padding: @spacing-loose @spacing-edge;
+  }
+}
+
+.wrapper--no-horizontal-spacing {
+  max-width: @site-max-width;
+  margin: 0 auto;
+  padding: @spacing-loose 0;
 }
 
 .outer-wrapper--gray-light {
   background-color: @white-dark;
-}
-
-.outer-wrapper--white {
-  background-color: @white;
 }
 
 .inner-wrapper {

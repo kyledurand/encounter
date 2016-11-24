@@ -6,13 +6,9 @@ body {
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  font-size: 100%;
-  font-weight: normal;
-  color: @gray-dark;
-}
-
-.type-body {
   font-size: 17px;
+  font-weight: 300;
+  color: @gray-dark;
 }
 
 .type-heading--small {
@@ -24,10 +20,36 @@ body {
 
 .type-heading--large {
   color: @gray-dark;
-  font-size: 60px;
+  font-size: 46px;
   font-weight: 300;
 
-  @media @before-medium-screens {
-    font-size: 46px;
+  @media @after-medium-screens {
+    font-size: 60px;
   }
+}
+
+.type-heading--card {
+  color: @gray-dark;
+  font-family: "Alegreya Sans SC";
+  font-size: 44px;
+  text-align: center;
+  margin: @spacing-tight 0;
+  font-weight: 300;
+}
+
+.type-sub-heading {
+  color: @gray-dark;
+  margin: 0;
+  margin-bottom: @spacing-loose;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 24px;
+  display: inline-block;
+  padding-bottom: @spacing-tight;
+  border-bottom: 1px solid @gray;
+  font-weight: 400;
+}
+
+.text-center {
+  text-align: center;
 }

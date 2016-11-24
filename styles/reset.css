@@ -120,7 +120,8 @@ sub {
   bottom: -0.25em;
 }
 
-img {
+img,
+svg {
   border: 0;
   max-width: 100%;
 }

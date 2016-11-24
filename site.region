@@ -7,39 +7,42 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <div class="site-container">
+
       {@|apply icons.block}
 
       <div class="hero">
-        <div class="hero__phone">
-          <img src="/assets/phone.png" alt="App preview on device">
-        </div>
+        <div class="wrapper">
+          <header class="site-header">
+            <!-- <squarespace:navigation navigationId="siteNav" template="site-navigation" /> -->
+            {.section website}
+            <h1 class="site-title-heading">
+              <a href="/" class="logo">
+                <span class="is-hidden-and-accessible" aria-hidden="true">{siteTitle}</span>
+                <svg aria-labelledby="logo" role="img" class="logo">
+                  <title id="logo">{siteTitle} logo</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
+                </svg>
+              </a>
+            </h1>
+            {.end}
+          </header>
 
-        <header class="site-header">
-          <!-- <squarespace:navigation navigationId="siteNav" template="site-navigation" /> -->
-          {.section website}
-          <h1 class="site-title-heading">
-            <a href="/" class="logo">
-              <span class="is-hidden-and-accessible" aria-hidden="true">{siteTitle}</span>
-              <svg aria-labelledby="logo" role="img" class="logo">
-                <title id="logo">{siteTitle} logo</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
+          <div class="hero__cta">
+            <h1 class="type-heading--large">A more human way to shop.</h1>
+            <h2 class="type-heading--small">Buy things when you see them.</h2>
+
+            <button class="button button--shadow">
+              <svg aria-labelledby="apple-icon" role="img" class="icon--small">
+                <title id="apple-icon">App store link</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#apple-logo"></use>
               </svg>
-            </a>
-          </h1>
-          {.end}
-        </header>
+              <span class="button__text button__text-with-icon">Download Free App</span>
+            </button>
+          </div>
 
-        <div class="hero__cta">
-          <h1 class="type-heading--large">A more human way to shop.</h1>
-          <h2 class="type-heading--small">Buy things when you see them.</h2>
-
-          <button class="button buton--shadow">
-            <svg aria-labelledby="apple-icon" role="img" class="icon--small">
-              <title id="apple-icon">App store link</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#apple-logo"></use>
-            </svg>
-            <span class="button__text button__text-with-icon">Download Free App</span>
-          </button>
+          <div class="hero__phone">
+            <img src="/assets/phone.png" alt="App preview on device">
+          </div>
         </div>
 
         <div class="hero-block hero__block-right-1"></div>
@@ -48,23 +51,46 @@
         <div class="hero-block hero__block-left-2"></div>
       </div>
 
-      <!-- cms content injection point -->
-      <main class="content-container" role="main" data-content-field="main-content">
-       {squarespace.main-content}
-      </main>
+      <!-- end hero -->
 
-      <!--Footer with open block field -->
-      <footer class="site-footer">
-        <squarespace:block-field id="footerBlocks" columns="12" />
-      </footer>
+      <div class="outer-wrapper--gray-light">
+        <div class="wrapper--no-horizontal-spacing text-center">
+          <div class="text-center">
+            <h2 class="type-sub-heading">Features</h2>
+          </div>
 
+          <div class="card">
+            <svg aria-labelledby="fast" role="img" class="card__icon">
+              <title id="fast">Fast</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fast"></use>
+            </svg>
+
+            <h3 class="type-heading--card">Fast.</h3>
+            <p class="card__blurb">No more search. Automagically see items you see in person, on your smartphone.</p>
+          </div>
+
+          <div class="card">
+            <svg aria-labelledby="convenient" role="img" class="card__icon">
+              <title id="convenient">Convenient</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#convenient"></use>
+            </svg>
+
+            <h3 class="type-heading--card">Convenient.</h3>
+            <p class="card__blurb">Order on your smartphone, get it delivered home.</p>
+          </div>
+
+          <div class="card">
+            <svg aria-labelledby="fair" role="img" class="card__icon">
+              <title id="fair">Fair</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fair"></use>
+            </svg>
+
+            <h3 class="type-heading--card">Fair.</h3>
+            <p class="card__blurb">Our prices are identical to official retailers.</p>
+          </div>
+
+        </div>
+      </div>
     </div>
-
-    <!-- combo and minify scripts when not logged in -->
-    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-
-    <!-- other scripts, and footer code injection -->
-    {squarespace-footers}
-
   </body>
 </html>
