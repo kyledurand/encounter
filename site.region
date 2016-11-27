@@ -41,7 +41,7 @@
           </div>
 
           <div class="hero__phone">
-            <img src="/assets/phone.png" alt="App preview on device">
+            <img src="/assets/phone.png" alt="App preview on a device">
           </div>
         </div>
 
@@ -88,7 +88,99 @@
             <h3 class="type-heading--card">Fair.</h3>
             <p class="card__blurb">Our prices are identical to official retailers.</p>
           </div>
+        </div>
+      </div>
 
+      <div class="wrapper--no-left-spacing">
+        <div class="offset-feature">
+          <div class="offset-blurbs">
+            <h3 class="type-heading--feature">Beautiful.</h3>
+            <p>Only original products. No cheap copies and knock-offs.</p>
+            <hr class="offset">
+            <h3 class="type-heading--feature">Human.</h3>
+            <p>Touch, feel and see products within their authentic context.</p>
+            <hr class="offset">
+          </div>
+        </div>
+      </div>
+
+      <section class="wrapper text-center">
+        <hr>
+      </section>
+
+      <div class="wrapper text-center">
+        <h3 class="type-heading--large">100+ Venues in Toronto</h3>
+        <h4 class="type-heading--small">Where do you want us to go next?</h4>
+        <div class="inline-input">
+          <input class="input--inline" type="text" placeholder="Enter your city">
+          <button class="button button--inline" type="submit">Submit</button>
+        </div>
+      </div>
+
+      <div class="outer-wrapper--gray-light">
+        <div class="locations-feature">
+          <div class="location location-1">
+            <svg aria-labelledby="LocationPin" role="img" class="location-pin">
+              <title id="LocationPin">Location</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pin"></use>
+            </svg>
+            <span class="locations-feature__text">Chair at Dineen Coffee</span>
+          </div>
+
+          <div class="location location-2">
+            <svg aria-labelledby="LocationPin" role="img" class="location-pin">
+              <title id="LocationPin">Location</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pin"></use>
+            </svg>
+            <span class="locations-feature__text">Vase at Breather</span>
+          </div>
+
+          <div class="location location-3">
+            <svg aria-labelledby="LocationPin" role="img" class="location-pin">
+              <title id="LocationPin">Location</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pin"></use>
+            </svg>
+            <span class="locations-feature__text">Sphere Light at Ricarda's</span>
+          </div>
+
+          <div class="location location-4">
+            <svg aria-labelledby="LocationPin" role="img" class="location-pin">
+              <title id="LocationPin">Location</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pin"></use>
+            </svg>
+            <span class="locations-feature__text">Pendant at Rooster Coffee</span>
+          </div>
+        </div>
+
+        <div class="outer-wrapper--gray-light text-center">
+          <h3 class="type-heading--large">Download Encounter now.</h3>
+          <h4 class="type-heading--small">And buy things when you see them.</h4>
+
+          <button class="button button--shadow button--center">
+            <svg aria-labelledby="apple-icon" role="img" class="icon--small">
+              <title id="apple-icon">App store link</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#apple-logo"></use>
+            </svg>
+            <span class="button__text button__text-with-icon">Download Free App</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="outer-wrapper--gray-light">
+        <div class="text-center social">
+          <svg aria-labelledby="instagram" role="img" class="icon--medium">
+            <title id="instagram">Instagram logo</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
+          </svg>
+
+          <svg aria-labelledby="twitter" role="img" class="icon--medium">
+            <title id="twitter">Twitter logo</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+          </svg>
+        </div>
+
+        <div class="wrapper__section last-item">
+          <div class="copy text-center">2016 Encouter. All rights Reserved.</div>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ body {
     sans-serif;
   font-size: 17px;
   font-weight: 300;
-  color: @gray-dark;
+  color: @gray;
 }
 
 .type-heading--small {
@@ -16,15 +16,30 @@ body {
   font-family: "Alegreya Sans SC";
   font-size: 24px;
   font-weight: 300;
+  margin-top: 0px;
+  margin-bottom: @spacing;
 }
 
 .type-heading--large {
   color: @gray-dark;
   font-size: 46px;
   font-weight: 300;
+  margin-top: 0px;
+  margin-bottom: @spacing;
 
   @media @after-medium-screens {
     font-size: 60px;
+  }
+}
+
+.type-heading--feature {
+  font-family: "Alegreya Sans SC";
+  font-size: 30px;
+  font-weight: 300;
+  margin: 0 0 @spacing-tight 0;
+
+  @media @after-small-screens {
+    font-size: 46px;
   }
 }
 

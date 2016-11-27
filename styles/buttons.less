@@ -2,6 +2,8 @@
   color: @white;
   background-color: @yellow;
   padding: @spacing @spacing-loose;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
   transition:
@@ -11,6 +13,14 @@
   @media @after-small-screens {
     margin: initial;
   }
+}
+
+.button--inline {
+  margin: 0;
+}
+
+.button--center {
+  margin: 0 auto;
 }
 
 .button:hover {
@@ -28,5 +38,5 @@
 }
 
 .button--shadow {
-  box-shadow: 0 6px 12px 0 rgba(255, 206, 0, 0.4);
+  box-shadow: 0 4px 12px 0 rgba(255, 206, 0, 0.4);
 }

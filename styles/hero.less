@@ -14,7 +14,7 @@
 .hero__cta {
   text-align: center;
   padding: @spacing-loose 0;
-  animation: 0.45s ease-in-out fade-in;
+  animation: 0.75s ease-in-out fade-in;
 
   @media @after-small-screens {
     text-align: left;
@@ -37,15 +37,16 @@
     position: absolute;
     top: 0;
     right: @spacing-loose * 2;
-    will-change: transform, max-width;
     top: @spacing;
     max-width: @phone-width--medium-screens;
+    animation: 0.3s ease-in-out fade-in;
   }
 
   @media @after-medium-screens {
     right: 0;
     max-width: @phone-width--large-screens;
     transform: @phone-offset;
+    animation: 0.3s ease-in-out fade-in;
   }
 }
 
@@ -88,12 +89,6 @@
   right: -@border-width;
   width: 45%;
   height: 70%;
-}
-
-@keyframes fade-out-in {
-  0%    { opacity: 1; }
-  50%   { opacity: 0; }
-  100%  { opacity: 1; }
 }
 
 @keyframes fade-in {
