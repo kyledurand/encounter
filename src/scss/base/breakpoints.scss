@@ -1,12 +1,11 @@
 $BREAKPOINTS: (
-  small-screens: 400px,
-  medium-screens: 680px,
-  large-screens: 960px,
+  medium-screens: 750px,
+  large-screens: 1106px,
 );
 
 $BREAKPOINT_INCREMENTS: (
   px: 1px,
-  vw: 1vw,
+  vw: 1vw
 );
 
 @function breakpoint-value-for($breakpoint) {
@@ -25,17 +24,6 @@ $BREAKPOINT_INCREMENTS: (
   @return map-get($BREAKPOINT_INCREMENTS, unit($value));
 }
 
-@function breakpoint-default-inclusivity($value, $default) {
-  $inclusivity: null;
-  @if length($value) > 1 { $inclusivity: nth($value, 2); }
-
-  @if $inclusivity {
-    @return $inclusivity == inclusive;
-  } @else {
-    @return $default;
-  }
-}
-
 @function breakpoint-adjusted-for-inclusivity($value, $min-or-max, $inclusive: false) {
   $value: breakpoint-clean-value($value);
 
@@ -50,11 +38,6 @@ $BREAKPOINT_INCREMENTS: (
   @return "(#{$min-or-max}-width: #{$value})";
 }
 
-@function breakpoint-retinize-media-query($media-query) {
-  @return "#{$media-query} and (-webkit-min-device-pixel-ratio: 2), #{$media-query} and (min-resolution: 192dpi)";
-}
-
-
 @mixin breakpoint-after($point) {
   @media screen and #{breakpoint-adjusted-for-inclusivity($point, min)} {
     @content;
@@ -63,14 +46,6 @@ $BREAKPOINT_INCREMENTS: (
 
 @mixin after($point) { @include breakpoint-after($point) { @content; } }
 
-@mixin breakpoint-from($point) {
-  @media screen and #{breakpoint-adjusted-for-inclusivity($point, min, true)} {
-    @content;
-  }
-}
-
-@mixin from($point) { @include breakpoint-from($point) { @content; } }
-
 @mixin breakpoint-before($point) {
   @media screen and #{breakpoint-adjusted-for-inclusivity($point, max)} {
     @content;
@@ -78,42 +53,3 @@ $BREAKPOINT_INCREMENTS: (
 }
 
 @mixin before($point) { @include breakpoint-before($point) { @content; } }
-
-@mixin breakpoint-to($point) {
-  @media screen and #{breakpoint-adjusted-for-inclusivity($point, max, true)} {
-    @content;
-  }
-}
-
-@mixin to($point) { @include breakpoint-to($point) { @content; } }
-
-@mixin breakpoint($after: null, $before: null, $from: null, $to: null, $until: null, $retina: false) {
-  $min-width: null;
-  $max-width: null;
-  $min-inclusive: null;
-  $max-inclusive: null;
-
-  // $after defaults to exclusive
-  @if $after {
-    $min-width: nth($after, 1);
-    $min-inclusive: breakpoint-default-inclusivity($after, false);
-  }
-
-  // $before defaults to exclusive
-  @if $before {
-    $max-width: nth($before, 1);
-    $max-inclusive: breakpoint-default-inclusivity($before, false);
-  }
-
-  @if $max-width { $max-width: breakpoint-adjusted-for-inclusivity($max-width, max, $max-inclusive); }
-  @if $min-width { $min-width: breakpoint-adjusted-for-inclusivity($min-width, min, $min-inclusive); }
-
-  $media-query: "screen";
-  @if $min-width { $media-query: "#{$media-query} and #{$min-width}"; }
-  @if $max-width { $media-query: "#{$media-query} and #{$max-width}"; }
-  @if $retina { $media-query: breakpoint-retinize-media-query($media-query); }
-
-  @media #{$media-query} {
-    @content;
-  }
-}

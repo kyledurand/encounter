@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: $gray;
+}
+
+.type-heading--small {
+  color: $gray;
+  font-family: "Alegreya Sans SC";
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: 0px;
+  margin-bottom: $spacing;
+}
+
+.type-heading--large {
+  color: $gray-dark;
+  font-size: 46px;
+  font-weight: 300;
+  margin-top: 0px;
+  margin-bottom: $spacing;
+
+  @include after(large-screens) {
+    font-size: 60px;
+  }
+}
+
+.type-heading--feature {
+  font-family: "Alegreya Sans SC";
+  font-size: 30px;
+  font-weight: 300;
+  margin: 0 0 $spacing-tight 0;
+
+  @include after(medium-screens) {
+    font-size: 46px;
+  }
+}
+
+.type-heading--card {
+  color: $gray-dark;
+  font-family: "Alegreya Sans SC";
+  font-size: 44px;
+  text-align: center;
+  margin: $spacing-tight 0;
+  font-weight: 300;
+}
+
+.type-sub-heading {
+  color: $gray-dark;
+  margin: 0;
+  margin-bottom: $spacing-loose;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 24px;
+  display: inline-block;
+  padding-bottom: $spacing-tight;
+  border-bottom: 1px solid $gray;
+  font-weight: 400;
+}
+
+.type-heading--feature {
+  font-family: "Alegreya Sans SC";
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 0 $spacing-tight 0;
+
+  @include after(medium-screens) {
+    font-size: 22px;
+  }
+}
+
+.type-menu {
+  font-family: "Alegreya Sans SC";
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.text-center {
+  text-align: center;
+}

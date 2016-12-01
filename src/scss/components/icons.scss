@@ -1,26 +1,12 @@
-$small-icon-size: 18px;
-$medium-icon-size: 22px;
+$icon-size--small: 23px;
+$icon-size--medium: 50px;
 
 .icon--small {
-  width: $small-icon-size;
-  height: $small-icon-size;
+  max-width: $icon-size--small;
+  height: $icon-size--small;
 }
 
 .icon--medium {
-  width: $medium-icon-size;
-  height: $medium-icon-size;
-}
-
-.icon--white {
-  * {
-    fill: color(white);
-    stroke: color(white);
-  }
-}
-
-.icon--slate {
-  * {
-    fill: color(slate);
-    stroke: color(slate);
-  }
+  max-width: $icon-size--medium;
+  height: $icon-size--medium;
 }

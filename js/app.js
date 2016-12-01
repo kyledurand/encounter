@@ -1,30 +1,58 @@
 'use strict';
 
-document.addEventListener("DOMContentLoaded", function () {
-  var constants = {
-    body: document.querySelector('body'),
-    menu: document.querySelector('.menu--condensed'),
-    menuTrigger: document.querySelector('[data=menu-trigger]'),
-    menuDismiss: document.querySelector('[data=menu-dismiss]'),
-    mediumBreakpoint: 720,
-    menuIsOpen: 'menu-is-visible'
-  };
+var CLASSES = {
+  MODAL: 'modal',
+  MODAL_CLOSE: 'modal__close',
+  MODAL_BACKDROP: 'modal-backdrop'
+};
 
-  constants.menuTrigger.onclick = function () {
-    menuOpen();
-  };
+var STATES = {
+  ACTIVE: 'is-active'
+};
 
-  constants.menuDismiss.onclick = function () {
-    menuClose();
-  };
+function submitFormToGoogle() {
+  var location = $('#location').val();
 
-  var menuOpen = function menuOpen() {
-    classie.addClass(constants.body, constants.menuIsOpen);
-    classie.addClass(constants.menu, constants.menuIsOpen);
-  };
+  $.ajax({
+    url: 'https://docs.google.com/forms/d/e/1FAIpQLSdCrs3S7JR7H9f25_ub0jjYbcUOAPJ0dCm3G5xdFh7_dJ4eXg/formResponse?embedded=true',
+    data: { 'entry.1961619445': location },
+    type: 'POST',
+    dataType: 'xml',
+    statusCode: {
+      0: function _() {
+        // success function
+      },
+      200: function _() {
+        // success function
+      }
+    }
+  });
+}
 
-  var menuClose = function menuClose() {
-    classie.removeClass(constants.body, constants.menuIsOpen);
-    classie.removeClass(constants.menu, constants.menuIsOpen);
-  };
-});
+function openModal(target) {
+  $('#' + target).show();
+  var $modalBackdrop = $('.' + CLASSES.MODAL_BACKDROP).addClass(STATES.ACTIVE);
+  var $body = $('body').css('overflow', 'hidden');
+
+  $('.' + CLASSES.MODAL_CLOSE).on('click', function () {
+    $('#' + target).hide();
+    $body.css('overflow', 'visible');
+    $modalBackdrop.removeClass(STATES.ACTIVE);
+  });
+
+  function closeModal() {
+    $('#' + target).hide();
+    $body.css('overflow', 'visible');
+    $modalBackdrop.removeClass(STATES.ACTIVE);
+  }
+
+  // $(`.${CLASSES.MODAL_BACKDROP}`).on('click', function() {
+  //   closeModal();
+  // })
+
+  $(document).keyup(function (event) {
+    if (event.keyCode == 27) {
+      closeModal();
+    }
+  });
+}

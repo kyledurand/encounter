@@ -1,0 +1,184 @@
+$site-max-width: 1000px;
+
+.logo {
+  display: block;
+  max-width: 242px;
+  max-height: 71px;
+}
+
+.wrapper {
+  position: relative;
+  padding: $spacing-loose;
+
+  @include after(medium-screens) {
+    max-width: $site-max-width;
+    margin: 0 auto;
+    padding: $spacing-loose $spacing-loose * 2;
+  }
+
+  @include after(large-screens) {
+    padding: $spacing-loose $spacing-edge;
+  }
+}
+
+.wrapper--no-horizontal-spacing {
+  max-width: $site-max-width;
+  margin: 0 auto;
+  padding: $spacing-loose 0;
+}
+
+.wrapper--no-left-spacing {
+  max-width: $site-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-loose 0 0;
+}
+
+.outer-wrapper--gray-light {
+  background-color: $white-dark;
+}
+
+.inner-wrapper {
+  max-width: $site-max-width;
+}
+
+.wrapper__section {
+  padding: $spacing 0;
+}
+
+.is-hidden-and-accessible{
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+}
+
+$offset-feature-width: 200px;
+$offset-feature-height: 420px;
+
+$offset-feature-width--large: 390px;
+$offset-feature-height--large: 800px;
+
+$offset: 50px;
+
+.offset-feature {
+  display: flex;
+  align-items: center;
+  background-image: url('../images/phone2.png');
+  background-size: $offset-feature-width $offset-feature-height;
+  background-position: -$offset $spacing * 2;
+  background-repeat: no-repeat;
+  min-height: $offset-feature-height + $spacing * 3;
+
+  @include after(medium-screens) {
+    background-size: $offset-feature-width--large $offset-feature-height--large;
+    background-position: $spacing-edge $spacing * 2;
+    min-height: $offset-feature-height--large + $spacing * 3;
+  }
+}
+
+.offset-blurbs {
+  padding-left: $offset-feature-width - $offset + $spacing;
+
+  @include after(medium-screens) {
+    padding-left: calc(50% + #{$spacing-edge} + #{$spacing} * 2);
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $gray-light;
+}
+
+hr.offset {
+  position: relative;
+  left: -$spacing;
+  width: calc(100% + #{spacing});
+  z-index: -1;
+
+  @include after(medium-screens) {
+    left: -$spacing-edge;
+    width: calc(100% + #{spacing-edge});
+  }
+}
+
+.inline-input {
+  display: flex;
+  justify-content: center;
+}
+
+.inline-input--left-justified {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input--inline {
+  border: 1px solid $gray-light;
+  text-indent: $spacing;
+}
+
+.locations-feature {
+  position: relative;
+  background-image: url('../images/phone3.png');
+  background-position: center -30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.location-pin {
+  width: 17px;
+  height: 22px;
+}
+
+.location {
+  background: $white;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
+  padding: $spacing-tight;
+  display: inline-block;
+  position: absolute;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.locations-feature__text {
+  margin-left: $spacing-tight;
+}
+
+.location-1 {
+  left: 10%;
+  top: 12%;
+}
+
+.location-2 {
+  right: 5%;
+  top: 21%;
+}
+
+.location-3 {
+  left: 2%;
+  top: 39%;
+}
+
+.location-4 {
+  right: 4%;
+  top: 48%;
+}
+
+.social {
+  padding: $spacing-edge 0 $spacing 0;
+
+  * {
+    margin: 0 $spacing-tight;
+    text-decoration: none !important;
+  }
+}
+
+.last-item {
+  padding-bottom: $spacing-edge;
+}

@@ -1,58 +1,45 @@
-$button-padding: 10px;
-$header-button-size: rem(60px);
-
 .button {
-  @include default(border-radius);
-  padding: $button-padding;
-  display: block;
-  width: 100%;
-  background-color: color(green);
-  border: 1px solid color(green);
-  cursor: pointer;
-  color: color(white);
-  line-height: 1;
-  text-align: center;
-  letter-spacing: 1px;
+  color: $white;
+  background-color: $yellow;
+  padding: $spacing $spacing-loose;
+  display: inline-flex;
+  margin: 0 auto;
   text-decoration: none;
   transition:
-    background-color 0.1s ease-in-out,
-    border-color 0.1s ease-in-out;
-  -webkit-tap-highlight-color: transparent;
+    0.2s color ease-in-out,
+    0.2s transform ease-in-out;
 
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: color(green, light);
-    background-color: color(green, light);
+  @include after(medium-screens) {
+    margin: initial;
   }
 }
 
 .button--inline {
-  display: inline-block;
-  width: auto;
-}
+  margin: 0;
 
-.button--unstyled {
-  background: none;
-  border: none;
-}
-
-.button--header {
-  @include transition(transform property(out-fast));
-  position: absolute;
-  top: 0px;
-  display: flex;
-  border: none;
-  outline: none;
-  align-items: center;
-  justify-content: center;
-  background-color: color(slate);
-  width: $header-button-size;
-  height: $header-button-size;
-  transform: translateY(0);
-
-  @include after(medium-screens) {
-    transform: translateY(-44px);
-    pointer-events: none;
+  &:hover {
+    transform: scale(1) !important;
   }
+}
+
+.button--center {
+  margin: 0 auto;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background-color: lighten($yellow, 3%);
+}
+
+.button__text {
+  position: relative;
+  top: 1px;
+}
+
+.button__text-with-icon {
+  margin-left: $spacing-tight;
+}
+
+.button--shadow {
+  box-shadow: 0 4px 12px 0 rgba(255, 206, 0, 0.4);
 }

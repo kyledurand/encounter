@@ -1,0 +1,23 @@
+.cta--mobile {
+  @include after(medium-screens) {
+    display: none;
+  }
+}
+
+.cta--non-mobile {
+  @include before(medium-screens) {
+    display: none !important;
+  }
+
+  @include after(medium-screens) {
+    display: flex !important;
+  }
+}
+
+.cta--iframe {
+  width: 100%;
+}
+
+.success {
+  color: $yellow;
+}

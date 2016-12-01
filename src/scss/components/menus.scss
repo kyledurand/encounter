@@ -1,0 +1,21 @@
+.menu {
+  font-family: 'Alegreya';
+  font-weight: 100;
+  padding: $spacing;
+}
+
+.menu__list {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.menu__item {
+  list-style: none;
+  display: inline-block;
+
+  &:not(:last-child):after {
+    content: '\00B7';
+    display: inline-block;
+  }
+}
