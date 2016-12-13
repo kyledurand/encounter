@@ -11,11 +11,15 @@
 }
 
 .menu__item {
-  list-style: none;
-  display: inline-block;
+  display: block;
 
-  &:not(:last-child):after {
-    content: '\00B7';
+  @include after(medium-screens) {
+    list-style: none;
     display: inline-block;
+
+    &:not(:last-child):after {
+      content: '\00B7';
+      display: inline-block;
+    }
   }
 }

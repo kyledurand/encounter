@@ -116,7 +116,9 @@ hr.offset {
 
 .input--inline {
   border: 1px solid $gray-light;
-  text-indent: $spacing;
+  text-indent: $spacing-tight;
+  flex: 1 1 auto;
+  max-width: 230px;
 }
 
 .locations-feature {

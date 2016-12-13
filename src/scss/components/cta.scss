@@ -14,10 +14,22 @@
   }
 }
 
-.cta--iframe {
-  width: 100%;
+.cta__label {
+  display: inline-block;
+  margin-bottom: $spacing-tight;
 }
 
 .success {
   color: $yellow;
+  margin-top: $spacing-tight;
+}
+
+.failure {
+  color: $red;
+  max-width: 286px;
+  margin-top: $spacing-tight;
+}
+
+.cta--center {
+  justify-content: center;
 }

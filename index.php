@@ -52,14 +52,19 @@
             <h1 class="type-heading--large">A more human way to shop.</h1>
             <h2 class="type-heading--small">Buy things when you see them.</h2>
 
-            <form method="post" action="sendnotifications" class="inline-input inline-input--left-justified flex-start cta--non-mobile">
-              <input type="tel" class="input--inline" pattern="^[\d\-\)\(\+ ]+$" name="number" value="" placeholder="1 (343) 546 3245" autocomplete = "on" oninvalid="setCustomValidity('Please match the following format: 1 (343) 546 3245')" required>
-              <input type="submit" class="button button--inline">
+            <label for="number" class="cta__label cta--non-mobile">Text me a link to the app:</label>
+            <form method="post" action="sendnotifications.php" class="inline-input inline-input--left-justified flex-start cta--non-mobile">
+              <input type="tel" class="input--inline" name="number" value="" placeholder="Your phone number" autocomplete="on" required>
+              <input type="submit" value="Send" class="button button--inline">
             </form>
 
             <?php
-              if ($_SESSION['notificationSent'] == true) {
-                echo "<div class='success cta--non-mobile'>Message sent!</div>";
+              if (isset($_SESSION['notificationSent'])) {
+                if ($_SESSION['notificationSent']) {
+                  echo "<div class='success cta--non-mobile'>Message sent!</div>";
+                } else {
+                  echo "<div class='failure cta--non-mobile'>Message not sent. Please check your your number format and try again.</div>";
+                }
               }
             ?>
 
@@ -144,11 +149,10 @@
         <h3 class="type-heading--large">100+ Venues in Toronto</h3>
         <h4 class="type-heading--small">Where do you want us to go next?</h4>
 
-          <form class="inline-input" target="_self" onsubmit="" action="javascript: submitFormToGoogle()">
-            <input class="input--inline" type="text" id="location" placeholder="Enter your city">
-            <button class="button button--inline" type="submit">Submit</button>
-           </form>
-
+        <form class="inline-input" target="_self" onsubmit="" action="javascript: submitFormToGoogle()">
+          <input class="input--inline" type="text" id="location" placeholder="Enter your city">
+          <button class="button button--inline" type="submit">Submit</button>
+        </form>
       </div>
 
       <div class="outer-wrapper--gray-light">
@@ -190,14 +194,15 @@
           <h3 class="type-heading--large">Download Encounter now.</h3>
           <h4 class="type-heading--small">And buy things when you see them.</h4>
 
-          <form method="post" action="sendnotifications" class="inline-input cta--non-mobile">
-            <input type="tel" class="input--inline" pattern="^[\d\-\)\(\+ ]+$" name="number" value="" placeholder="1 (343) 546 3245" autocomplete = "on" oninvalid="setCustomValidity('Please match the following format: 1 (343) 546 3245')" required>
-            <input type="submit" class="button button--inline">
+          <label for="number" class="cta__label cta--non-mobile cta--center">Text me a link to the app:</label>
+          <form method="post" action="sendnotifications.php" class="inline-input cta--non-mobile">
+            <input type="tel" class="input--inline" name="number" value="" placeholder="Your phone number" autocomplete="on" required>
+            <input type="submit" value="Send" class="button button--inline">
           </form>
 
           <?php
             if ($_SESSION['notificationSent'] == TRUE) {
-              echo "<div class='success cta--non-mobile'>Message sent!</div>";
+              echo "<div class='success cta--non-mobile cta--center'>Message sent!</div>";
             }
           ?>
 
@@ -260,3 +265,4 @@
     <script type="text/javascript" src="js/app.js?<?php echo(date("s")) ?>"></script>
   </body>
 </html>
+<?php session_destroy(); ?>
