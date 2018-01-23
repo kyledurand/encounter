@@ -1,21 +1,23 @@
-'use strict';
+var showTermsParam = 'showTermsOfService';
+var termsLink = 'TermsLink';
 
 var CLASSES = {
   MODAL: 'modal',
   MODAL_CLOSE: 'modal__close',
-  MODAL_BACKDROP: 'modal-backdrop'
+  MODAL_BACKDROP: 'modal-backdrop',
 };
 
 var STATES = {
-  ACTIVE: 'is-active'
+  ACTIVE: 'is-active',
 };
 
 function submitFormToGoogle() {
   var location = $('#location').val();
 
   $.ajax({
-    url: 'https://docs.google.com/forms/d/e/1FAIpQLSdCrs3S7JR7H9f25_ub0jjYbcUOAPJ0dCm3G5xdFh7_dJ4eXg/formResponse?embedded=true',
-    data: { 'entry.1961619445': location },
+    url:
+      'https://docs.google.com/forms/d/e/1FAIpQLSdCrs3S7JR7H9f25_ub0jjYbcUOAPJ0dCm3G5xdFh7_dJ4eXg/formResponse?embedded=true',
+    data: {'entry.1961619445': location},
     type: 'POST',
     dataType: 'xml',
     statusCode: {
@@ -24,8 +26,8 @@ function submitFormToGoogle() {
       },
       200: function _() {
         // success function
-      }
-    }
+      },
+    },
   });
 }
 
@@ -34,7 +36,7 @@ function openModal(target) {
   var $modalBackdrop = $('.' + CLASSES.MODAL_BACKDROP).addClass(STATES.ACTIVE);
   var $body = $('body').css('overflow', 'hidden');
 
-  $('.' + CLASSES.MODAL_CLOSE).on('click', function () {
+  $('.' + CLASSES.MODAL_CLOSE).on('click', function() {
     $('#' + target).hide();
     $body.css('overflow', 'visible');
     $modalBackdrop.removeClass(STATES.ACTIVE);
@@ -46,13 +48,22 @@ function openModal(target) {
     $modalBackdrop.removeClass(STATES.ACTIVE);
   }
 
-  // $(`.${CLASSES.MODAL_BACKDROP}`).on('click', function() {
-  //   closeModal();
-  // })
-
-  $(document).keyup(function (event) {
+  $(document).keyup(function(event) {
     if (event.keyCode == 27) {
       closeModal();
     }
   });
 }
+
+$(document).ready(() => {
+  console.log('ready');
+  const url = new URL(window.location);
+  const params = url.searchParams;
+  console.log(params);
+  const showModal = params.get(showTermsParam);
+  console.log(showModal);
+  if (showModal === 'true') {
+    const link = document.getElementById(termsLink);
+    link.click();
+  }
+});

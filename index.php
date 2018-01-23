@@ -233,7 +233,7 @@
                 <button type="button" onclick="openModal('Privacy')">Privacy policy</button>
               </li>
               <li class="menu__item type-menu">
-                <button type="button" onclick="openModal('Terms')">Terms of service</button>
+                <button id="TermsLink" type="button" onclick="openModal('Terms')">Terms of service</button>
               </li>
             </ul>
           </div>
